@@ -43,23 +43,11 @@ console.log("last page!!!")
 
   const onNext = () => {
     
-    //  setToggle(false)
-    // if(currentPage ==paginationRange[paginationRange.length-2] ){
-
-    //   setRightToggle(true)
-    // }
-    // console.log("on next")
     onPageChange(currentPage + 1);
   };
 
   const onPrevious = () => {
-    // if(currentPage==2){
-    //   setToggle(true)
-    // }
-    // if(rightToggle){
-    //   setRightToggle(false)
-    // }
-    // console.log("on prev")
+   
     onPageChange(currentPage - 1);
   };
 
@@ -86,25 +74,25 @@ console.log("last page!!!")
         // console.log("dis",pageNumber);
         const key = nanoid();
 
-        if(pageNumber==currentPage){
-          return (
-            <li
-              key={key}
-              className="paginationItem"
-              aria-current={currentPage} // change this line to highlight a current page.
-            >
-              <button
-                type="button"
-                style={{backgroundColor :"grey"}}
-                // Do not remove the aria-label below, it is used for Hatchways automation.
-                aria-label={`Goto page ${pageNumber}`}
-                onClick={() => onPageChange(pageNumber)}
-              >
-                {pageNumber}
-              </button>
-            </li>
-          );
-        }
+        // if(pageNumber==currentPage){
+        //   return (
+        //     <li
+        //       key={key}
+        //       className="paginationItem"
+        //       aria-current={currentPage} // change this line to highlight a current page.
+        //     >
+        //       <button
+        //         type="button"
+        //         style={{backgroundColor :"grey"}}
+        //         // Do not remove the aria-label below, it is used for Hatchways automation.
+        //         aria-label={`Goto page ${pageNumber}`}
+        //         onClick={() => onPageChange(pageNumber)}
+        //       >
+        //         {pageNumber}
+        //       </button>
+        //     </li>
+        //   );
+        // }
         if (pageNumber === DOTS) {
           return (
             <li key={key} className="dots">
@@ -117,11 +105,11 @@ console.log("last page!!!")
           <li
             key={key}
             className="paginationItem"
-            aria-current={currentPage} // change this line to highlight a current page.
+            aria-current={pageNumber==currentPage?"page":"false"} // change this line to highlight a current page.
           >
             <button
               type="button"
-              // style={{color :"grey"}}
+             
               // Do not remove the aria-label below, it is used for Hatchways automation.
               aria-label={`Goto page ${pageNumber}`}
               onClick={() => onPageChange(pageNumber)}

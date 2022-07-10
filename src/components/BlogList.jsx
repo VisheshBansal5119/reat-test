@@ -18,14 +18,13 @@ function BlogList() {
   const updateRowsPerPage = (rows) => {
     setCurrentPage(1)
     setPageSize(rows);
-    // usePagination(1,650,rows)
     setcurrentPaginationData(blogs.posts.slice(0, rows))
-    // console.log("updated ", rows)
+    
   };
   const updatePage = (currentPage) => {
     setCurrentPage(currentPage);
     setcurrentPaginationData(blogs.posts.slice((currentPage-1)*pageSize, currentPage*pageSize))
-    // con sole.log(currentPage)
+   
   };
 
   return (
