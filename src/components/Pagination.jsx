@@ -74,25 +74,25 @@ console.log("last page!!!")
         // console.log("dis",pageNumber);
         const key = nanoid();
 
-        if(pageNumber==currentPage){
-          return (
-            <li
-              key={key}
-              className="paginationItem"
-              aria-current={currentPage} // change this line to highlight a current page.
-            >
-              <button
-                type="button"
-                style={{backgroundColor :"grey"}}
-                // Do not remove the aria-label below, it is used for Hatchways automation.
-                aria-label={`Goto page ${pageNumber}`}
-                onClick={() => onPageChange(pageNumber)}
-              >
-                {pageNumber}
-              </button>
-            </li>
-          );
-        }
+        // if(pageNumber==currentPage){
+        //   return (
+        //     <li
+        //       key={key}
+        //       className="paginationItem"
+        //       aria-current={currentPage} // change this line to highlight a current page.
+        //     >
+        //       <button
+        //         type="button"
+        //         style={{backgroundColor :"grey"}}
+        //         // Do not remove the aria-label below, it is used for Hatchways automation.
+        //         aria-label={`Goto page ${pageNumber}`}
+        //         onClick={() => onPageChange(pageNumber)}
+        //       >
+        //         {pageNumber}
+        //       </button>
+        //     </li>
+        //   );
+        // }
         if (pageNumber === DOTS) {
           return (
             <li key={key} className="dots">
@@ -109,7 +109,7 @@ console.log("last page!!!")
           >
             <button
               type="button"
-              // style={{color :"grey"}}
+             
               // Do not remove the aria-label below, it is used for Hatchways automation.
               aria-label={`Goto page ${pageNumber}`}
               onClick={() => onPageChange(pageNumber)}
